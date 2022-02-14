@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <memory.h>
 /* Return true (non-zero) if c is the delimiter character
    previously chosen by the user.
    Zero terminators are not printable (therefore false) */
 bool delim_character(char c, char delim)
 {
-  delim = (!((c >= '0'&& c<='9')||(c>= 'a'&& c<= 'z')||(c>= 'A'&& c<= 'Z')));
-  return (c==delim);
+  return (delim != ((c >= '0'&& c<='9')||(c>= 'a'&& c<= 'z')||(c>= 'A'&& c<= 'Z')) && c==delim);
+  //return (c==delim);
 
 }
 
@@ -71,6 +72,7 @@ char *copy_str(char *inStr, short len, char delim)
   return copy;
 
 }
+//citation https://www.youtube.com/watch?v=yFboyOwk2oM
 
 /* Returns a freshly allocated zero-terminated vector of freshly allocated
    delimiter-separated tokens from zero-terminated str.
@@ -100,6 +102,7 @@ char** tokenize(char* str, char delim)
   return array;
 
 }
+//citation https://www.youtube.com/watch?v=yFboyOwk2oM
 
 void print_all_tokens(char** tokens)
 {
