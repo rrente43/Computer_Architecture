@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <memory.h>
 /* Return true (non-zero) if c is the delimiter character
    previously chosen by the user.
    Zero terminators are not printable (therefore false) */
